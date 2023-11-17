@@ -8,7 +8,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 })
 export class AuthService {
 
-  authURL = 'http://localhost:8080/authenticate';
+  authURL = 'https://springredcorp.azurewebsites.net/authenticate';
 
   constructor(private http:HttpClient,
     private jwtHelper: JwtHelperService) { }
