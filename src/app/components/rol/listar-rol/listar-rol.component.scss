@@ -1,0 +1,32 @@
+.container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title{
+    color:#7DA4CA;
+    font-size: 2.5rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    font-weight: 500;
+}
+
+.table-rol table{
+    margin-bottom: 3rem;
+    min-width: 40rem;
+    .buttons{
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        .mat-mdc-raised-button.mat-warn {
+            --mdc-protected-button-container-color: #C9725B;
+        }
+        .mat-mdc-raised-button.mat-accent {
+            --mdc-protected-button-container-color: #7DA4CA;
+        }
+    }
+}
+
+

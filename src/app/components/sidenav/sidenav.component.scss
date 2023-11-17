@@ -1,0 +1,237 @@
+.sidenav {
+  background-color: #22242e;
+  transition: all 0.5s ease;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  width: 5rem;
+  height: 100vh;
+  box-shadow: 0.063rem 0 1.25rem 0 #8690a3;
+  .logo-container {
+    display: flex;
+    align-items: center;
+    padding: 0.938rem 0.938rem 0 0.938rem;
+    width: 100%;
+    box-sizing: border-box;
+    .logo {
+      background-color: #fff;
+      text-align: center;
+      width: 3rem;
+      min-width: 3rem;
+      border-radius: 0.313rem;
+      padding: 0.313rem;
+      font-size: 24px;
+      font-weight: 900;
+      cursor: pointer;
+      border: none;
+    }
+    .logo-text {
+      margin-left: 1.5rem;
+      img {
+        width: 100px;
+        transform: scale(1.2);
+      }
+    }
+    .btn-close {
+      margin-left: auto;
+      cursor: pointer;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      background-color: transparent;
+      border: none;
+      .fa-circle-xmark {
+        color: #fff;
+        font-size: 24px;
+      }
+
+      .close-icon {
+        font-size: 24px;
+        color: #fff;
+      }
+    }
+  }
+}
+
+.sidenav-collapsed {
+  width: 16.5625rem;
+}
+
+.sidenav-nav {
+  list-style: none !important;
+  padding: 0.938rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  .sidenav-nav-item {
+    width: 100%;
+    margin-bottom: 0.625rem;
+    .sidenav-nav-link {
+      display: flex;
+      align-items: center;
+      height: 3rem;
+      color: #f3f3f3;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      &:hover {
+        .menu-collapse-icon {
+          color: #000;
+        }
+      }
+      .sidenav-link-icon {
+        font-size: 22px;
+        width: 2rem;
+        min-width: 2rem;
+        margin: 0 0.5rem;
+        text-align: center;
+      }
+      .sidenav-link-text {
+        margin-left: 1.5rem;
+      }
+    }
+    .sublevel-nav {
+      list-style: none;
+      margin-left: 10px;
+      .sublevel-nav-item {
+        .sublevel-nav-link {
+          display: flex;
+          align-items: center;
+          height: 3rem;
+          color: #898989;
+          text-decoration: none;
+          border-radius: 0.625rem;
+          transition: all 0.3s ease;
+          .sublevel-link-icon {
+            font-size: 4px;
+            width: 2rem;
+            min-width: 2rem;
+            margin: 0 0.5rem;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+  .sidenav-nav-item:hover {
+    .sidenav-nav-link {
+      background-color: #fff;
+      border-radius: 0.313rem;
+      color: #000 !important;
+    }
+  }
+}
+
+.active {
+  border-radius: 0.313rem;
+  background-color: #fff;
+  color: #000;
+  .sidenav-link-text {
+    color: #000;
+    transition: all 0.8s ease;
+  }
+  .sidenav-link-icon {
+    color: #000;
+  }
+  .menu-collapse-icon {
+    color: #000;
+  }
+}
+
+.menu-collapse-icon {
+  font-size: 25px;
+  width: 2rem;
+  min-width: 2rem;
+  margin: auto 0.5rem auto auto;
+  text-align: center;
+  color: #f3f3f3;
+}
+
+.sublevel-nav {
+  list-style: none;
+  margin-left: 10px;
+  .sublevel-nav-item {
+    .sublevel-nav-link {
+      display: flex;
+      align-items: center;
+      height: 3rem;
+      color: #898989;
+      text-decoration: none;
+      border-radius: 0.625rem;
+      transition: all 0.3s ease;
+      &:hover {
+        color: #f3f3f3;
+      }
+      .sublevel-link-icon {
+        font-size: 4px;
+        width: 2rem;
+        min-width: 2rem;
+        margin: 0 0.5rem;
+        text-align: center;
+      }
+      .sublevel-link-text {
+        margin-left: 0.8rem;
+        min-width: 120px;
+      }
+    }
+  }
+}
+
+.scrollwrap {
+  overflow-y: auto;
+  visibility: hidden;
+  height: calc(100% - 3.65rem);
+}
+
+.sidenav-nav,
+.scrollwrap:hover,
+.scrollwrap:focus {
+  visibility: visible;
+}
+
+.scrollwrap_delayed {
+  transition: visibility 0.5s 0 0.2s;
+}
+
+.scrollwrap_delayed:hover {
+  transition: visibility 0.2s 0.2s;
+}
+
+.scrollwrap {
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #556268;
+    border-radius: 20px;
+  }
+
+  scrollbar-width: thin;
+  scrollbar-color: #556268 transparent;
+}
+
+
+
+.sublevel-nav {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.4s cubic-bezier(0.86, 0, 0.07, 1), opacity 0.6s cubic-bezier(0.86, 0, 0.07, 1);
+
+  &.visible {
+    max-height: 1000px; // O ajusta a la altura máxima que desees
+  }
+
+  &.hidden {
+    max-height: 0;
+  }
+
+  &.animating {
+    overflow: hidden;
+  }
+}

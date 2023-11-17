@@ -1,0 +1,68 @@
+<div class="container">
+    <h1 class="title">Listar Comunicado</h1>
+    <div class="table-rol">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="codigo">
+          <th mat-header-cell *matHeaderCellDef>Codigo</th>
+          <td mat-cell *matCellDef="let element">{{ element.idComunicado }}</td>
+        </ng-container>
+        <ng-container matColumnDef="nombre">
+          <th mat-header-cell *matHeaderCellDef>Nombre</th>
+          <td mat-cell *matCellDef="let element">{{ element.titulo }}</td>
+        </ng-container>
+        <ng-container matColumnDef="descripcion">
+          <th mat-header-cell *matHeaderCellDef>Descripcion</th>
+          <td mat-cell *matCellDef="let element">{{ element.descripcion }}</td>
+        </ng-container>
+        <ng-container matColumnDef="fechaCreacion">
+            <th mat-header-cell *matHeaderCellDef>Fecha</th>
+            <td mat-cell *matCellDef="let element">{{ element.fechaCreacion }}</td>
+          </ng-container>
+        <ng-container matColumnDef="usuario">
+          <th mat-header-cell *matHeaderCellDef>Usuario</th>
+          <td mat-cell *matCellDef="let element">{{ element.usuario.nombre }}</td>
+        </ng-container>
+        <ng-container matColumnDef="areatrabajo">
+            <th mat-header-cell *matHeaderCellDef>Area de Trabajo</th>
+            <td mat-cell *matCellDef="let element">{{ element.areaDeTrabajo.nombre }}</td>
+          </ng-container>
+          <ng-container matColumnDef="grupo">
+            <th mat-header-cell *matHeaderCellDef>Grupo</th>
+            <td mat-cell *matCellDef="let element">{{ element.grupoDeProyecto.nombre }}</td>
+          </ng-container>
+  
+        <ng-container matColumnDef="funciones">
+          <th mat-header-cell *matHeaderCellDef style="text-align: center">
+            Acciones
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <div class="buttons">
+              <button
+                mat-raised-button
+                color="warn"
+                [routerLink]="['ediciones', element.idComunicado]"
+              >
+                Actualizar
+              </button>
+              <button
+                mat-raised-button
+                color="accent"
+                (click)="eliminar(element.idComunicado)"
+              >
+                Eliminar
+              </button>
+            </div>
+          </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+      <mat-paginator
+        [pageSizeOptions]="[5, 10, 20]"
+        showFirstLastButtons
+        aria-label="Select page of periodic elements"
+      >
+      </mat-paginator>
+    </div>
+  </div>
+  

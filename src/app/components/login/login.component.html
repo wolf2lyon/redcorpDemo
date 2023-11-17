@@ -1,0 +1,25 @@
+<div class="container vh-100  d-flex  align-items-center justify-content-center">
+    <div class="wrapped h-100 w-100 d-flex  align-items-center justify-content-around animate__animated animate__fadeIn animate__faster" style="max-width: 1000px;">
+        <div class="h-100 flex-1 d-flex flex-column align-items-center justify-content-center" style="background-color: #9F5454;width: 250px;">
+            <img src="../../../assets/images/Logo.png" alt="image-logo">
+            <p class="text-break ps-4 text-light" style="font-size: 19px;">Descubre el mundo de la productividad para mejorar tu rutina laboral</p>
+            <img src="../../../assets/images/Person.png" alt="image-person" style="width: 190px;height: 109px;">
+        </div>
+            <div class="h-50 flex-2">
+                <h1 class="text-center fs-3 mb-3 animate__animated animate__fadeIn animate__fast">Iniciar sesión en Redcorp</h1>
+                <form  (ngSubmit)="onLogin()">
+                    <div class="mb-3 animate__animated animate__fadeIn animate__fast">
+                      <label for="exampleInputEmail1" class="form-label">Username</label>
+                      <input name="nombreUsuario" [(ngModel)]="nombreUsuario" type="text" class="form-control rounded-pill" id="exampleInputEmail1">
+                    </div>
+                    <div class="mb-3 animate__animated animate__fadeIn animate__fast">
+                      <label for="exampleInputPassword1" class="form-label">Password</label>
+                      <input name="password" [(ngModel)]="password" type="password" class="form-control rounded-pill" id="exampleInputPassword1">
+                    </div>
+                    <button type="submit" class="btn btn-primary rounded-pill d-block m-auto animate__animated animate__fadeIn animate__fast background">Iniciar Sesion</button>
+                </form>
+            </div>
+    </div>
+
+    
+</div>

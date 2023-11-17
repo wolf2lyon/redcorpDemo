@@ -1,0 +1,75 @@
+<div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed' : ''">
+  <div class="logo-container">
+    <button class="logo" (click)="toggleCollapse()">R</button>
+    <div class="logo-text" @fadeInOut *ngIf="collapsed">
+      <img src="../../../assets/images/Logo.png" alt="logo" />
+    </div>
+    <button
+      class="btn-close"
+      *ngIf="collapsed"
+      @rotate
+      (click)="closeSidenav()"
+    >
+      <i class="fa-solid fa-xmark close-icon"></i>
+    </button>
+  </div>
+
+  <div class="scrollwrap scrollwrap_delayed">
+    <ul class="sidenav-nav">
+      <li class="sidenav-nav-item" *ngFor="let data of navData">
+        <ng-container *ngIf="data.rol==='EMPLO' || rolUser==='ADMIN'">
+          <a
+            class="sidenav-nav-link"
+            (click)="handleClick(data)"
+            *ngIf="data.items && data.items.length > 0"
+          >
+            <i class="sidenav-link-icon" [class]="data.icon"></i>
+            <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">{{
+              data.label
+            }}</span>
+            <i
+              *ngIf="data.items && collapsed"
+              class="menu-collapse-icon"
+              [ngClass]="
+                !data.expanded
+                  ? 'fa-solid fa-angle-right'
+                  : 'fa-solid fa-angle-down'
+              "
+            ></i>
+          </a>
+
+
+        <a
+          href=""
+          class="sidenav-nav-link"
+          *ngIf="!data.items || (data.items && data.items.length === 0)"
+          [routerLink]="[data.routelink]"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <i class="sidenav-link-icon" [class]="data.icon"></i>
+          <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">{{
+            data.label
+          }}</span>
+        </a>
+      </ng-container>
+        <div *ngIf="collapsed && data.items && data.items.length > 0">
+          <app-sublevel-menu
+            [data]="data"
+            [collapsed]="collapsed"
+            [multiple]="multiple"
+            [expanded]="data.expanded"
+          ></app-sublevel-menu>
+        </div>
+      </li>
+      <li class="sidenav-nav-item">
+        <a class="sidenav-nav-link" (click)="cerrarSesion()">
+          <i class="sidenav-link-icon fa-solid fa-right-from-bracket" ></i>
+          <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed" style="text-wrap: nowrap;"
+            >Cerrar Sesion</span
+          >
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container" style="text-align: center">
+        <h1>Registro Miembro de Grupo</h1>
+        <form [formGroup]="form" (submit)="aceptar()" class="example-form">
+          <mat-form-field class="example-full-width" *ngIf="edicion">
+            <mat-label>id</mat-label>
+            <input matInput placeholder="Id" formControlName="idMiembroEnGrupo" readonly=""/>
+          </mat-form-field>
+          <br />
+          <mat-form-field class="example-full-width">
+            <mat-label>Miembro de Area</mat-label>
+            <mat-select formControlName="miembroDeArea">
+              <mat-option
+                *ngFor="let p of listaMiembros"
+                [value]="p.idMiembroDeArea"
+              >
+                {{ p.idMiembroDeArea }}
+              </mat-option>
+            </mat-select>
+            <mat-error
+              *ngIf="obtenerControlCampo('miembroDeArea')?.errors?.['required']"
+            >
+              El miembro de area es obligatorio.
+            </mat-error>
+          </mat-form-field>
+          <br />
+          <mat-form-field class="example-full-width">
+            <mat-label>Grupo de Proyecto</mat-label>
+            <mat-select formControlName="grupoDeProyecto">
+              <mat-option
+                *ngFor="let p of listaGrupos"
+                [value]="p.idGrupoDeProyecto"
+              >
+                {{ p.nombre }}
+              </mat-option>
+            </mat-select>
+            <mat-error
+              *ngIf="obtenerControlCampo('grupoDeProyecto')?.errors?.['required']"
+            >
+              El grupo de proyecto es obligatorio.
+            </mat-error>
+          </mat-form-field>
+          <br />
+          <div class="buttons">
+              <button mat-raised-button color="accent">Aceptar</button>
+              <button mat-raised-button color="warn" routerLink="/miembrogrupo">
+                Cancelar
+              </button>
+          </div>
+          <p>{{ mensaje }}</p>
+        </form>
+      </div>
+</body>
+</html>

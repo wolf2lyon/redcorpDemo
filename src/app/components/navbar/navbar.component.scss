@@ -1,0 +1,22 @@
+
+.wrapper-image{
+    flex:0.5;
+    img {
+        width: 8.5rem;
+        height: auto;
+      }
+    
+}
+.mat-toolbar{
+    background-color: #22242E;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    button{
+        color: white;
+    }
+    .container-buttons{
+        flex: 1;
+    }
+}

@@ -1,0 +1,24 @@
+<div class="container">
+    <h1 class="title">Descripcion de tarea por Proyecto</h1>
+    <div class="table-rol">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="cantidadComentario">
+          <th mat-header-cell *matHeaderCellDef>Cantidad Comentario</th>
+          <td mat-cell *matCellDef="let element">{{ element.cantidadComentario }}</td>
+        </ng-container>
+        <ng-container matColumnDef="nombreTarea">
+          <th mat-header-cell *matHeaderCellDef>Nombre de Tarea</th>
+          <td mat-cell *matCellDef="let element">{{ element.nombreTarea }}</td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+      <mat-paginator
+        [pageSizeOptions]="[5, 10, 20]"
+        showFirstLastButtons
+        aria-label="Select page of periodic elements"
+      >
+      </mat-paginator>
+    </div>
+  </div>
