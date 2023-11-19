@@ -47,10 +47,12 @@ export class CreaeditaTareaMiembroAreaComponent {
       tarea: ['', Validators.required],
     });
     this.mS.list().subscribe((data) => {
-      this.listaMiembros = data;
+      const dataFilter = data.filter(item => item.active === true)
+      this.listaMiembros = dataFilter;
     });
     this.tS.list().subscribe((data) => {
-      this.listaTareas = data;
+      const dataFilter = data.filter(item => item.active === true)
+      this.listaTareas = dataFilter;
     });   
   }
 

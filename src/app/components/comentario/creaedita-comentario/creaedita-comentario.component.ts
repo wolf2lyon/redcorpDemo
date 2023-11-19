@@ -43,7 +43,8 @@ export class CreaeditaComentarioComponent {
 
     });
     this.tS.list().subscribe((data) => {
-      this.listaTareas = data;
+      const dataFilter = data.filter(item => item.active === true)
+      this.listaTareas = dataFilter;
     });
   }
 

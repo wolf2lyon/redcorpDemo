@@ -60,13 +60,16 @@ export class CreaeditaComunicadoComponent {
       grupoproyecto: ['', Validators.required],
     });
     this.uS.list().subscribe((data) => {
-      this.listUsuarios = data;
+      const dataFilter = data.filter(item => item.active === true)
+      this.listUsuarios = dataFilter;
     });
     this.aS.list().subscribe((data) => {
-      this.listAreas = data;
+      const dataFilter = data.filter(item => item.active === true)
+      this.listAreas = dataFilter;
     });
     this.gS.list().subscribe((data) => {
-      this.listGrupos = data;
+      const dataFilter = data.filter(item => item.active === true)
+      this.listGrupos = dataFilter;
     });
   }
 

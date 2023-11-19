@@ -48,10 +48,12 @@ export class CreaeditaMiembrogrupoComponent {
       grupoDeProyecto: ['', Validators.required],
     });
     this.mA.list().subscribe((data) => {
-      this.listaMiembros = data;
+      const dataFilter = data.filter(item => item.active === true)
+      this.listaMiembros = dataFilter;
     });
     this.gS.list().subscribe((data) => {
-      this.listaGrupos = data;
+      const dataFilter = data.filter(item => item.active === true)
+      this.listaGrupos = dataFilter;
     });   
   }
 

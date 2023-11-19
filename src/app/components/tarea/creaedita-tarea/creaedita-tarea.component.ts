@@ -54,10 +54,12 @@ export class CreaeditaTareaComponent {
       fechaCreacion: ['', Validators.required],
     });
     this.pS.list().subscribe((data) => {
-      this.listProyecto = data;
+      const dataFilter = data.filter(item => item.active === true)
+      this.listProyecto = dataFilter;
     });
     this.gS.list().subscribe((data) => {
-      this.listGrupos = data;
+      const dataFilter = data.filter(item => item.active === true)
+      this.listGrupos = dataFilter;
     });
   }
 

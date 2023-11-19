@@ -50,7 +50,8 @@ export class CreaeditaProyectoComponent {
       fechaCreacion: ['', Validators.required]
     });
     this.uS.list().subscribe((data) => {
-      this.listUsuarios = data;
+      const dataFilter = data.filter(item => item.active === true)
+      this.listUsuarios = dataFilter;
     });
   }
 

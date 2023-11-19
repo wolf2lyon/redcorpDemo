@@ -47,10 +47,12 @@ export class CreaeditaMiembroareaComponent {
       areaDeTrabajo: ['', Validators.required],
     });
     this.uS.list().subscribe((data) => {
-      this.listaUsuario = data;
+      const dataFilter = data.filter(item => item.active === true)
+      this.listaUsuario = dataFilter;
     });
     this.aS.list().subscribe((data) => {
-      this.listaAreaTrabajo = data;
+      const dataFilter = data.filter(item => item.active === true)
+      this.listaAreaTrabajo = dataFilter;
     });
 
     
