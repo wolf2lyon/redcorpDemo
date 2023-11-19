@@ -1,4 +1,4 @@
-<div style="display: flex">
+<div style="display: flex" class="wrapper">
   <mat-form-field>
     <mat-label>Id Miembro Area</mat-label>
     <mat-select (selectionChange)="onSelectionChange($event)">
@@ -37,12 +37,12 @@
     }}</mat-card-content>
   </mat-card>
 
-  <div style="line-height: 59px;margin-left: 30px;"><button mat-raised-button color="accent" (click)="onClick()">Buscar</button></div>
+  <div style="line-height: 59px;margin-left: 30px;"><button  mat-raised-button color="accent" style="background-color: #6a5dc4;" (click)="onClick()">Buscar</button></div>
 </div>
 
 
 <div class="container">
-    <h1 class="title">Descripcion de tarea por Proyecto</h1>
+    <h1 class="title">Descripcion de tarea por Miembro de Area</h1>
     <div class="table-rol">
       <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
         <ng-container matColumnDef="codigo">

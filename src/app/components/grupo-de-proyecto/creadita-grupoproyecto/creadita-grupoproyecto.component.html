@@ -10,12 +10,12 @@
         <h1>Registro de Grupo de Proyecto</h1>
         <form [formGroup]="form" (submit)="aceptar()" class="example-form">
           <mat-form-field class="example-full-width" *ngIf="edicion">
-            <mat-label>id</mat-label>
+            <mat-label class="title-label">id</mat-label>
             <input matInput placeholder="Id" formControlName="idGrupoDeProyecto" readonly=""/>
           </mat-form-field>
           <br />
           <mat-form-field class="example-full-width">
-            <mat-label>Nombre</mat-label>
+            <mat-label class="title-label">Nombre</mat-label>
             <input
               matInput
               placeholder="Nombre"
@@ -50,7 +50,7 @@
           </mat-form-field>
           <br />
           <mat-form-field class="example-full-width">
-            <mat-label>Proyecto</mat-label>
+            <mat-label class="title-label">Proyecto</mat-label>
             <mat-select formControlName="proyecto">
               <mat-option
                 *ngFor="let p of listaProyecto"

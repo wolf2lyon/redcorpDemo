@@ -1,30 +1,56 @@
-.container{
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto+Slab:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto+Slab:wght@400;700&display=swap");
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  color: #7da4ca;
+  font-family: "Roboto Slab";
+  font-size: 2.5rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  font-weight: 500;
+}
+
+.table-rol table {
+  margin-bottom: 3rem;
+  min-width: 40rem;
+  th {
+    font-family: "Roboto Condensed";
+    font-size: 18px;
+    font-weight: 700;
+  }
+  td {
+    font-family: "Roboto Condensed";
+    font-size: 18px;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.65) !important;
+  }
+  .buttons {
     display: flex;
+    gap: 2rem;
     justify-content: center;
-    flex-direction: column;
-    align-items: center;
-}
-
-.title{
-    color:#7DA4CA;
-    font-size: 2.5rem;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    font-weight: 500;
-}
-
-.table-rol table{
-    margin-bottom: 3rem;
-    min-width: 40rem;
-    .buttons{
-        display: flex;
-        gap: 2rem;
-        justify-content: center;
-        .mat-mdc-raised-button.mat-warn {
-            --mdc-protected-button-container-color: #C9725B;
-        }
-        .mat-mdc-raised-button.mat-accent {
-            --mdc-protected-button-container-color: #7DA4CA;
-        }
+    .mdc-button{
+        font-family: "Roboto Condensed" !important;
+        font-size: 1.125rem !important;
+        font-weight: 400 !important;
+        color: #FFF !important;
     }
+    .mat-mdc-raised-button.mat-warn {
+      --mdc-protected-button-container-color: #f17259;
+      border-radius: 100px;
+    }
+    .mat-mdc-raised-button.mat-accent {
+      --mdc-protected-button-container-color: #6a5dc4;
+      border-radius: 100px;
+    }
+  }
+}
+
+.contrasena {
+  max-width: 110px;
 }

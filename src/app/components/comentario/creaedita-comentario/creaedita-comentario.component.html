@@ -10,12 +10,12 @@
         <h1>Registro de Comentario</h1>
         <form [formGroup]="form" (submit)="aceptar()" class="example-form">
           <mat-form-field class="example-full-width" *ngIf="edicion">
-            <mat-label>id</mat-label>
+            <mat-label class="title-label">id</mat-label>
             <input matInput placeholder="Id" formControlName="idComentario" readonly=""/>
           </mat-form-field>
           <br />
           <mat-form-field class="example-full-width">
-            <mat-label>Comentario</mat-label>
+            <mat-label class="title-label">Comentario</mat-label>
             <input
               matInput
               placeholder="Comentario"
@@ -29,7 +29,7 @@
           </mat-form-field>
           <br />
           <mat-form-field class="example-full-width">
-            <mat-label>Tareas</mat-label>
+            <mat-label class="title-label">Tareas</mat-label>
             <mat-select formControlName="tarea">
               <mat-option
                 *ngFor="let p of listaTareas"

@@ -10,12 +10,12 @@
         <h1>Registro de Area de Trabajo</h1>
         <form [formGroup]="form" (submit)="aceptar()" class="example-form">
           <mat-form-field class="example-full-width" *ngIf="edicion">
-            <mat-label>id</mat-label>
+            <mat-label class="title-label">id</mat-label>
             <input matInput placeholder="Id" formControlName="idAreaDeTrabajo" readonly=""/>
           </mat-form-field>
           <br />
           <mat-form-field class="example-full-width">
-            <mat-label>Nombre</mat-label>
+            <mat-label class="title-label">Nombre</mat-label>
             <input
               matInput
               placeholder="Nombre"
@@ -29,7 +29,7 @@
           </mat-form-field>
           <br />
           <mat-form-field class="example-full-width">
-            <mat-label>Descripcion</mat-label>
+            <mat-label class="title-label">Descripcion</mat-label>
             <input
               matInput
               placeholder="Descripcion"

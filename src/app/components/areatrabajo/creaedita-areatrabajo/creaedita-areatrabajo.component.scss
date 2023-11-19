@@ -1,4 +1,4 @@
-.container{
+.container {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -6,28 +6,47 @@
     height: auto;
     margin-top: 3.125rem;
     max-width: 50rem;
-    h1{
-        color:#7DA4CA;
-        font-size: 2.5rem;
-        font-weight: 500;
-        margin-bottom: 1.25rem;
+  
+    h1 {
+      color: #7da4ca;
+      font-size: 2.5rem;
+      font-weight: 500;
+      margin-bottom: 1.25rem;
+      font-family: "Roboto Slab";
     }
-    form{
-        width: 80%;
-        .mat-mdc-form-field {
-        width: 50%;
+    form {
+      width: 80%;
+      .mat-mdc-form-field {
+        width: 70%;
+      }
+  
+      .example-full-width {
+        color: rgba(0, 0, 0, 0.62);
+        font-family: "Roboto Condensed" !important;
+        font-size: 22px !important;
+        font-weight: 400;
+      }
+      .title-label {
+        color: rgba(0, 0, 0, 0.62);
+        font-family: "Roboto Condensed" !important;
+        font-size: 22px !important;
+        font-weight: 400;
+      }
+  
+      .buttons {
+        width: 40%;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        .mat-mdc-raised-button.mat-warn {
+          --mdc-protected-button-container-color: #6a5dc4;
+          border-radius: 100px;
         }
-        .buttons{
-            width: 40%;
-            display: flex;
-            justify-content: space-between;
-            margin: 0 auto;
-            .mat-mdc-raised-button.mat-warn {
-                --mdc-protected-button-container-color:#7DA4CA;
-            }
-            .mat-mdc-raised-button.mat-accent {
-                --mdc-protected-button-container-color:  #C9725B;
-            }
+        .mat-mdc-raised-button.mat-accent {
+          --mdc-protected-button-container-color: #f17259;
+          border-radius: 100px;
         }
+      }
     }
-}
+  }
+  

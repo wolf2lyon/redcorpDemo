@@ -10,12 +10,12 @@
         <h1>Registro de Usuarios</h1>
         <form [formGroup]="form" (submit)="aceptar()" class="example-form">
           <mat-form-field class="example-full-width" *ngIf="edicion">
-            <mat-label>idUsuario</mat-label>
+            <mat-label class="title-label">idUsuario</mat-label>
             <input matInput placeholder="Id" formControlName="idUsuario" readonly=""/>
           </mat-form-field>
           <br />
           <mat-form-field class="example-full-width">
-            <mat-label>Nombre</mat-label>
+            <mat-label class="title-label">Nombre</mat-label>
             <input
               matInput
               placeholder="Nombre"
@@ -29,7 +29,7 @@
           </mat-form-field>
           <br />
           <mat-form-field class="example-full-width">
-            <mat-label>Correo</mat-label>
+            <mat-label class="title-label">Correo</mat-label>
             <input
               matInput
               placeholder="Correo"
@@ -64,7 +64,7 @@
           </mat-form-field>
           <br />
           <mat-form-field class="example-full-width">
-            <mat-label>Roles</mat-label>
+            <mat-label class="title-label">Roles</mat-label>
             <mat-select formControlName="rol">
               <mat-option
                 *ngFor="let p of listRoles"
@@ -81,7 +81,7 @@
           </mat-form-field>
           <br />
           <mat-form-field class="example-full-width">
-            <mat-label>User Name</mat-label>
+            <mat-label class="title-label">User Name</mat-label>
             <input
               matInput
               placeholder="User Name"
@@ -95,7 +95,7 @@
           </mat-form-field>
           <br />
           <mat-form-field class="example-full-width">
-            <mat-label>Contraseña</mat-label>
+            <mat-label class="title-label">Contraseña</mat-label>
             <input
               matInput
               placeholder="Contraseña"

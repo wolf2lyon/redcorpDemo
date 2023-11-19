@@ -19,14 +19,14 @@
         <table class="table">
             <thead>
               <tr>
-                <th scope="col">Nombre</th>
-                <th scope="col">Correo</th>
-                <th scope="col">Area</th>
+                <th class="title-span" scope="col">Nombre</th>
+                <th class="title-span" scope="col">Correo</th>
+                <th class="title-span" scope="col">Area</th>
               </tr>
             </thead>
             <tbody>
                   <tr *ngFor="let datos of data">
-                    <th scope="row">{{datos.nombre}}</th>
+                    <td>{{datos.nombre}}</td>
                     <td>{{datos.correo}}</td>
                     <td>{{datos.area}}</td>
                   

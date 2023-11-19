@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto+Slab:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto+Slab:wght@400;700&display=swap');
 .main{
     padding: 0;
     color: white;
@@ -13,6 +15,9 @@ section{
         align-self: flex-start;
         margin-left: 1.25rem;
         color:#7DA4CA;
+        font-family: 'Roboto Slab';
+        font-size: 2.625rem;
+          
     }
     .search-header{
         width: 100%;
@@ -38,6 +43,14 @@ section{
     }
     .table{
         width: 88%;
+        .title-span{
+            font-family: 'Roboto Condensed';
+            font-size: 1.125rem;
+        }
+        td{
+            font-family: 'Roboto Condensed';
+            font-size: 1.125rem;
+        }
     }
     .title{
         margin-left:3.5rem ;

@@ -10,12 +10,12 @@
         <h1>Registro Miembro de Area</h1>
         <form [formGroup]="form" (submit)="aceptar()" class="example-form">
           <mat-form-field class="example-full-width" *ngIf="edicion">
-            <mat-label>id</mat-label>
+            <mat-label class="title-label">id</mat-label>
             <input matInput placeholder="Id" formControlName="idMiembroDeArea" readonly=""/>
           </mat-form-field>
           <br />
           <mat-form-field class="example-full-width">
-            <mat-label>Area de Trabajo</mat-label>
+            <mat-label class="title-label">Area de Trabajo</mat-label>
             <mat-select formControlName="areaDeTrabajo">
               <mat-option
                 *ngFor="let p of listaAreaTrabajo"
@@ -32,7 +32,7 @@
           </mat-form-field>
           <br />
           <mat-form-field class="example-full-width">
-            <mat-label>Usuario</mat-label>
+            <mat-label class="title-label">Usuario</mat-label>
             <mat-select formControlName="usuario">
               <mat-option
                 *ngFor="let p of listaUsuario"
