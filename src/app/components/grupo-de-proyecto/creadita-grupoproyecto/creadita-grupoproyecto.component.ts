@@ -50,6 +50,7 @@ export class CreaditaGrupoproyectoComponent {
       proyecto: ['', Validators.required]
     });
     this.pS.list().subscribe((data) => {
+      const dataFilter = data.filter(item => item.active === true)
       this.listaProyecto = data;
     });
   }
@@ -57,7 +58,7 @@ export class CreaditaGrupoproyectoComponent {
   aceptar(): void {
     this.pS.listId(this.form.value.proyecto).subscribe((proyectoSelect)=>{
       if (this.form.valid) {
-        this.grupoProyecto.idGrupoDeProyecto = this.form.value.idProyecto;
+        this.grupoProyecto.idGrupoDeProyecto = this.form.value.idGrupoDeProyecto;
         this.grupoProyecto.nombre = this.form.value.nombre;
         this.grupoProyecto.fechaCreacion = this.form.value.fechaCreacion;
         this.grupoProyecto.proyecto = proyectoSelect ;
