@@ -32,7 +32,7 @@ export class AuthService {
     // let headers = new HttpHeaders()
     // .set("Authorization",`Bearer ${localStorage.getItem('jwttoken')}`)
     // console.log(headers)
-    return this.http.get("http://localhost:8080/api/areasdetrabajo/panel")
+    return this.http.get("https://springredcorp.azurewebsites.net//api/areasdetrabajo/panel")
   }
   showRole(){
     let token = localStorage.getItem("jwttoken");
